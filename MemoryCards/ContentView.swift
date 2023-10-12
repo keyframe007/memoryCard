@@ -9,39 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var exitCount = 0
+    @State private var isUp = true
     
     
     var body: some View {
         ZStack{
-            Rectangle()
-                .ignoresSafeArea()
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            if isUp {
+                Rectangle()
+                     .frame(width: 100)
+                     .foregroundStyle(.white)
+                     .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 2)
+                Text("💀")
+            } else {
                 
-            Button(action: {
-                exitCount += 1
-            }, label: {
-                ZStack {
-                    
-                    Image(systemName: "rectangle.portrait.and.arrow.right.fill")
-                        .font(.title)
-                        .foregroundColor(.black)
-                        .imageScale(.large)
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
-                        .background(.red)
-                        .cornerRadius(10)
-                        
-                    Text("EXIT: \(exitCount)")
-                        .foregroundStyle(.white)
-                        .bold()
-                        .padding(.top, 65.0)
-                    
-                        
-                }
-                
-                .padding()
-                
-            })
+                Rectangle()
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(.orange)
+            }
         }
         
         
