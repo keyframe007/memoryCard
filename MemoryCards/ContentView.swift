@@ -33,8 +33,10 @@ struct BaseCard: View {
     @State private var isUp = true
     
     var body: some View {
+        
         Button(action: {
             isUp.toggle()
+            
         }, label: {
             
             ZStack{
@@ -44,25 +46,26 @@ struct BaseCard: View {
                          .foregroundStyle(.white)
                          .border(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
                          
-                         
-                         
-                         
-                         
                     Text("💀")
+                       
+                         
                 } else {
-                    
                     Rectangle()
                         .frame(width: 60)
                         .foregroundStyle(.orange)
-                        
-                        
                 }
             }
             .cornerRadius(10, antialiased: true)
         })
-        
     }
 }
+        
+                         
+                    
+                         
+                         
+                        
+                        
 
         
         
