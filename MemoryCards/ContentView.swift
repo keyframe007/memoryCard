@@ -41,14 +41,16 @@ struct BaseCard: View {
             
             ZStack{
                 if isUp {
-                    Rectangle()
-                         .frame(width: 60)
-                         .foregroundStyle(.white)
-                         .border(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
-                         
-                    Text("💀")
-                       
-                         
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 60)
+                        .foregroundStyle(.white)
+                    RoundedRectangle(cornerRadius: 10).strokeBorder(lineWidth: 4)
+                        .frame(width: 60)
+                        .foregroundStyle(.orange)
+                    
+                    
+                    Text("💀").font(.largeTitle)
+                    
                 } else {
                     Rectangle()
                         .frame(width: 60)
@@ -59,6 +61,13 @@ struct BaseCard: View {
         })
     }
 }
+                    
+                    
+                         
+                    
+                         
+                         
+                       
         
                          
                     
